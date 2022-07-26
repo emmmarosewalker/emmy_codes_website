@@ -1,9 +1,11 @@
 import styled from 'styled-components';
-import { primary, white } from './colors';
+import {
+  primary, secondary, tertiary, white,
+} from './colors';
 import { gridUnitPx, SizeScale } from './measurements';
 
 type TextType = {
-  color: 'primary' | 'white';
+  color: 'primary' | 'secondary' | 'white';
   weight: 'light' | 'regular' | 'semibold' | 'bold';
   size: SizeScale;
 };
@@ -13,6 +15,8 @@ type TextProps = Partial<TextType>;
 const getColor = (color: TextType['color']) => ({
   primary,
   white,
+  secondary,
+  tertiary,
 })[color];
 
 const getFontWeight = (weight: TextType['weight']) => ({
@@ -44,4 +48,8 @@ export const H1 = styled.h1<TextProps>`
 
 export const H2 = styled.h2<TextProps>`
     ${(props) => getTextStyles({ size: 'large', ...props })};
+`;
+
+export const P = styled.p<TextProps>`
+    ${(props) => getTextStyles({ size: 'regular', ...props })};
 `;

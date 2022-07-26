@@ -7,9 +7,11 @@ type Props = {
 
 export function Layout({ children }: Props) {
   return (
-    <div>
+    <>
       <Nav />
-      {children}
-    </div>
+      <div style={{ maxWidth: '100%', overflow: 'hidden' }}>
+        {children}
+      </div>
+    </>
   );
 }
