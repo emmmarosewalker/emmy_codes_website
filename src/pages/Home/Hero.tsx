@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react';
+import { MouseEventHandler } from 'react';
 import styled from 'styled-components';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import cogsIcon from '../../assets/cogs-icon.png';

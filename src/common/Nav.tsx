@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { tertiary, white } from '../design/colors';
 import { gridUnitPx } from '../design/measurements';

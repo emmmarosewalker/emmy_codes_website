@@ -1,14 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
 import {
-  motion, useScroll, useTransform,
+  motion,
+  useScroll,
+  useTransform
 } from 'framer-motion';
-import { secondary } from '../design/colors';
-import { gridUnitPx } from '../design/measurements';
-import { H2, P } from '../design/typography';
+import styled from 'styled-components';
 import hand from '../assets/hand.png';
 import paperPlane from '../assets/paper-plane.png';
 import { breakpointXLarge } from '../design/browser';
+import { secondary } from '../design/colors';
+import { gridUnitPx } from '../design/measurements';
+import { H2, P } from '../design/typography';
 
 const Container = styled.div`
   background-color: ${secondary};
