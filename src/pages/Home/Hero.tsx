@@ -1,10 +1,9 @@
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { MouseEventHandler } from 'react';
 import styled from 'styled-components';
+import atom from '../../assets/images/atom.png';
 import cloudIcon from '../../assets/images/cloud-icon.webp';
-import githubIcon from '../../assets/images/github-icon.png';
 import htmlIcon from '../../assets/images/html-icon.png';
-import instagramIcon from '../../assets/images/instagram-icon.webp';
 import laptopIcon from '../../assets/images/laptop.png';
 import phoneIcon from '../../assets/images/mobile-settings-icon.png';
 import { breakpointSmall, breakpointXLarge } from '../../design/browser';
@@ -88,26 +87,11 @@ const CloudIcon = styled(motion.img)`
     width: ${gridUnitPx(45)};
 `;
 
-const SocialIcon = styled.img`
-    width: ${gridUnitPx(20)};
-
-
-    ${breakpointSmall(`
-        width: ${gridUnitPx(30)};
-    `)}
-`;
-
-const SocialIconsContainer = styled.div`
-    position: absolute;
-    display: flex;
-    bottom: 0;
-    right: 0;
-
-    flex-direction: column;
-    ${breakpointXLarge(`
-        flex-direction: row;
-        bottom: -${gridUnitPx(10)};
-    `)}
+const AtomIcon = styled(motion.img)`
+  width: ${gridUnitPx(40)};
+  position: absolute;
+  bottom: -${gridUnitPx(12)};
+  right: -${gridUnitPx(12)};
 `;
 
 const CONTAINER_WIDTH = 1100;
@@ -153,10 +137,14 @@ export function Hero() {
           translateY: translateYFast,
         }}
       />
-      <SocialIconsContainer>
-        <SocialIcon src={githubIcon} alt="3d github icon" />
-        <SocialIcon src={instagramIcon} alt="3d instagram icon" />
-      </SocialIconsContainer>
+      <AtomIcon
+        src={atom}
+        alt="3d atom icon"
+        style={{
+          translateX: translateXSlow,
+          translateY: translateYSlow,
+        }}
+      />
       <DisplayOnlyOnXLarge>
         <LaptopIcon
           src={laptopIcon}
