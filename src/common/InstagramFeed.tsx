@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { gridUnitPx } from '../design/measurements';
 import { boxshadowSmall } from '../design/shadow';
-import { P } from '../design/typography';
+import { H2 } from '../design/typography';
 
 type InstagramResponse = {
   caption: string;
@@ -55,13 +55,15 @@ export function InstagramFeed() {
   }, [url]);
 
   return (
-    <MediaContainer>
-      {data.map((item) => (
-        <MediaItem key={item.id}>
-          {item.media_type !== 'VIDEO' ? <img src={item.media_url} alt={item.caption} /> : <video src={item.media_url} />}
-          <P>{item.caption}</P>
-        </MediaItem>
-      ))}
-    </MediaContainer>
+    <div>
+      <H2 align="center" weight="semibold" size="x-large">Latest from instagram</H2>
+      <MediaContainer>
+        {data.slice(0, 6).map((item) => (
+          <MediaItem key={item.id}>
+            {item.media_type !== 'VIDEO' ? <img src={item.media_url} alt={item.caption} /> : <video src={item.media_url} />}
+          </MediaItem>
+        ))}
+      </MediaContainer>
+    </div>
   );
 }

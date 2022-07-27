@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {
-  primary, secondary, tertiary, white,
+  primary, secondary, tertiary, white
 } from './colors';
 import { gridUnitPx, SizeScale } from './measurements';
 
@@ -8,6 +8,7 @@ type TextType = {
   color: 'primary' | 'secondary' | 'white';
   weight: 'light' | 'regular' | 'semibold' | 'bold';
   size: SizeScale;
+  align: 'left' | 'center' | 'right'
 };
 
 type TextProps = Partial<TextType>;
@@ -40,6 +41,7 @@ const getTextStyles = (props: TextProps) => `
     ${props.color && `color: ${getColor(props.color)}`};
     ${props.weight && `font-weight: ${getFontWeight(props.weight)}`};
     ${props.size && `font-size: ${getFontSize(props.size)}`};
+    ${props.align && `text-align: ${props.align}`};
 `;
 
 export const H1 = styled.h1<TextProps>`

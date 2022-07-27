@@ -7,9 +7,7 @@ export function Home() {
   return (
     <Layout>
       <Hero />
-      <div style={{ height: 600 }} />
       <Contact />
-      <div style={{ height: 600 }} />
       <InstagramFeed />
     </Layout>
   );
