@@ -4,8 +4,8 @@ import {
   useTransform
 } from 'framer-motion';
 import styled from 'styled-components';
-import hand from '../assets/hand.png';
-import paperPlane from '../assets/paper-plane.png';
+import hand from '../assets/images/hand.png';
+import paperPlane from '../assets/images/paper-plane.png';
 import { breakpointXLarge } from '../design/browser';
 import { secondary } from '../design/colors';
 import { gridUnitPx } from '../design/measurements';

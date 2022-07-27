@@ -1,12 +1,12 @@
+import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { MouseEventHandler } from 'react';
 import styled from 'styled-components';
-import { motion, useMotionValue, useTransform } from 'framer-motion';
-import cogsIcon from '../../assets/cogs-icon.png';
-import colorPaletteIcon from '../../assets/color-palette-icon.png';
-import githubIcon from '../../assets/github-icon.png';
-import htmlIcon from '../../assets/html-icon.png';
-import instagramIcon from '../../assets/instagram-icon.webp';
-import phoneIcon from '../../assets/mobile-settings-icon.png';
+import cloudIcon from '../../assets/images/cloud-icon.webp';
+import githubIcon from '../../assets/images/github-icon.png';
+import htmlIcon from '../../assets/images/html-icon.png';
+import instagramIcon from '../../assets/images/instagram-icon.webp';
+import laptopIcon from '../../assets/images/laptop.png';
+import phoneIcon from '../../assets/images/mobile-settings-icon.png';
 import { breakpointSmall, breakpointXLarge } from '../../design/browser';
 import { primary } from '../../design/colors';
 import { gridUnitPx } from '../../design/measurements';
@@ -61,29 +61,27 @@ const MobileIcon = styled(motion.img)`
     bottom: ${gridUnitPx(30)};
     
     width: ${gridUnitPx(80)};
-    transform: scaleX(-1);
 
     ${breakpointSmall(`
-        width: ${gridUnitPx(100)};
+        width: ${gridUnitPx(90)};
         left: -${gridUnitPx(40)};
         bottom: ${gridUnitPx(5)};
     `)}
 
     ${breakpointXLarge(`
-        width: ${gridUnitPx(110)};
         left: -${gridUnitPx(45)};
         bottom: -${gridUnitPx(25)};
     `)}
 `;
 
-const ColorPaletteIcon = styled(motion.img)`
+const LaptopIcon = styled(motion.img)`
     position: absolute;
     left: 40%;
-    bottom: -${gridUnitPx(10)};
-    width: ${gridUnitPx(120)};
+    bottom: ${gridUnitPx(20)};
+    width: ${gridUnitPx(100)};
 `;
 
-const CogsIcon = styled(motion.img)`
+const CloudIcon = styled(motion.img)`
     position: absolute;
     top: 0;
     left: 0;
@@ -160,16 +158,16 @@ export function Hero() {
         <SocialIcon src={instagramIcon} alt="3d instagram icon" />
       </SocialIconsContainer>
       <DisplayOnlyOnXLarge>
-        <ColorPaletteIcon
-          src={colorPaletteIcon}
+        <LaptopIcon
+          src={laptopIcon}
           alt="3d paint color palette"
           style={{
             translateX: translateXSlow,
             translateY: translateYSlow,
           }}
         />
-        <CogsIcon
-          src={cogsIcon}
+        <CloudIcon
+          src={cloudIcon}
           alt="3d cogs"
           style={{
             translateX: translateXSlow,

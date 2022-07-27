@@ -2,11 +2,13 @@ import styled from 'styled-components';
 import { tertiary, white } from '../design/colors';
 import { gridUnitPx } from '../design/measurements';
 import { boxshadowSmall } from '../design/shadow';
+import { P } from '../design/typography';
 
 const NavBar = styled.nav`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 90%;
   max-width: ${gridUnitPx(300)};
 `;
 
@@ -29,22 +31,22 @@ const Menu = styled.ul`
 
 const MenuItem = styled.li`
   padding: ${gridUnitPx(1)};
-  text-transform: lowercase;
 `;
 
 export function Nav() {
   return (
     <Header>
       <NavBar>
+        <P weight="bold">Emmy Codes</P>
         <Menu>
           <MenuItem>
-            Home
+            Link 1
           </MenuItem>
           <MenuItem>
-            Projects
+            Link 2
           </MenuItem>
           <MenuItem>
-            Contact
+            Link 3
           </MenuItem>
         </Menu>
       </NavBar>
