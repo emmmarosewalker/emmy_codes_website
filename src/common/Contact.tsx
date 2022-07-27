@@ -3,6 +3,7 @@ import {
   useScroll,
   useTransform
 } from 'framer-motion';
+import { useRef } from 'react';
 import styled from 'styled-components';
 import hand from '../assets/images/hand.png';
 import paperPlane from '../assets/images/paper-plane.png';
@@ -28,7 +29,6 @@ const HandContainer = styled(motion.div)`
   width: ${gridUnitPx(110)};
   bottom: 0;
   left: 0;
-  overflow: hidden;
   ${breakpointXLarge(`
     width: ${gridUnitPx(150)};
   `)}
@@ -60,15 +60,16 @@ const PaperPlane = styled(motion.img)`
 `;
 
 export function Contact() {
-  const { scrollYProgress } = useScroll();
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
 
-  const translateX = useTransform(scrollYProgress, [0, 1], [-100, 150]);
-  const translateY = useTransform(scrollYProgress, [0, 1], [100, -30]);
-  const translateHandX = useTransform(scrollYProgress, [0, 1], [-200, 100]);
-  const translateHandY = useTransform(scrollYProgress, [0, 1], [-40, 0]);
+  const translateX = useTransform(scrollYProgress, [1, 0], [-100, 150]);
+  const translateY = useTransform(scrollYProgress, [1, 0], [100, -30]);
+  const translateHandX = useTransform(scrollYProgress, [1, 0], [-200, 100]);
+  const translateHandY = useTransform(scrollYProgress, [1, 0], [-40, 0]);
 
   return (
-    <Container>
+    <Container ref={ref}>
       <H2 color="white" weight="semibold" size="x-large">Contact</H2>
       <P color="white" size="large">Contact copy goes here</P>
       <PaperPlane src={paperPlane} style={{ translateX, translateY }} alt="3d paper plane" />
