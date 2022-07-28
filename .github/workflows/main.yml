@@ -23,7 +23,7 @@ jobs:
           output: json
           
       - name: Build static website files
-        run: yarn build
+        run: yarn && yarn build
           
       - name: Copy files to S3 with the AWS CLI
         run: |
