@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { tertiary, white } from '../design/colors';
+import { white } from '../design/colors';
 import { gridUnitPx } from '../design/measurements';
 import { boxshadowSmall } from '../design/shadow';
 import { P } from '../design/typography';
@@ -13,7 +13,7 @@ const NavBar = styled.nav`
 `;
 
 const Header = styled.header`
-  background: ${tertiary};
+  background: ${white};
   height: ${gridUnitPx(12)};
   display: flex;
   align-items: center;
@@ -22,7 +22,7 @@ const Header = styled.header`
   top: 0;
   z-index: 10;
   ${boxshadowSmall};
-  color: ${white};
+  //color:;
 `;
 
 const Menu = styled.ul`

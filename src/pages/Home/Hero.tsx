@@ -27,7 +27,7 @@ const HeroContainer = styled.div`
     `)}
 
     ${breakpointXLarge(`
-        margin: ${gridUnitPx(25)} auto ${gridUnitPx(25)} auto;
+        margin: ${gridUnitPx(15)} auto ${gridUnitPx(28)} auto;
         display: flex;
         align-items: center;
         padding: ${gridUnitPx(15)} ${gridUnitPx(30)};
@@ -48,8 +48,8 @@ const HtmlIcon = styled(motion.img)`
     `)}
 
     ${breakpointXLarge(`
-        width: ${gridUnitPx(80)};
-        right: -${gridUnitPx(30)};
+        width: ${gridUnitPx(72)};
+        right: -${gridUnitPx(20)};
         top: ${gridUnitPx(5)};
     `)}
 `;
@@ -62,14 +62,14 @@ const MobileIcon = styled(motion.img)`
     width: ${gridUnitPx(60)};
 
     ${breakpointSmall(`
-        width: ${gridUnitPx(90)};
+        width: ${gridUnitPx(85)};
         left: -${gridUnitPx(40)};
         bottom: ${gridUnitPx(5)};
     `)}
 
     ${breakpointXLarge(`
-        left: -${gridUnitPx(45)};
-        bottom: -${gridUnitPx(25)};
+        left: -${gridUnitPx(40)};
+        bottom: -${gridUnitPx(20)};
     `)}
 `;
 
@@ -77,7 +77,7 @@ const LaptopIcon = styled(motion.img)`
     position: absolute;
     left: 40%;
     bottom: ${gridUnitPx(20)};
-    width: ${gridUnitPx(100)};
+    width: ${gridUnitPx(86)};
 `;
 
 const CloudIcon = styled(motion.img)`
@@ -164,8 +164,8 @@ export function Hero() {
         />
       </DisplayOnlyOnXLarge>
       <div>
-        <H1 color="white">Title</H1>
-        <H2 color="white">Subtitle text goes here</H2>
+        <H1>Title</H1>
+        <H2>Subtitle text goes here</H2>
       </div>
     </HeroContainer>
   );

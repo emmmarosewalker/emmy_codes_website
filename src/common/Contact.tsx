@@ -70,8 +70,8 @@ export function Contact() {
 
   return (
     <Container ref={ref}>
-      <H2 color="white" weight="semibold" size="x-large">Contact</H2>
-      <P color="white" size="large">Contact copy goes here</P>
+      <H2 weight="semibold" size="x-large">Contact</H2>
+      <P size="large">Contact copy goes here</P>
       <PaperPlane src={paperPlane} style={{ translateX, translateY }} alt="3d paper plane" />
       <HandContainer style={{ translateX: translateHandX, translateY: translateHandY }}>
         <HandInnerContainer>
