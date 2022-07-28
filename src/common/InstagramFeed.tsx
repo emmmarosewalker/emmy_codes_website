@@ -41,7 +41,7 @@ const MediaItem = styled.div`
 
 export function InstagramFeed() {
   const [data, setData] = useState<InstagramResponse[]>([]);
-  const url = `https://graph.instagram.com/me/media?fields=media_count,media_type,permalink,media_url,caption&&access_token=${process.env.REACT_APP_INSTAGRAM_API_KEY}`;
+  const url = 'https://api.emmycodes.com/posts';
 
   useEffect(() => {
     const fetchData = async () => {
