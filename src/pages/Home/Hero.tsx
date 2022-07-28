@@ -37,7 +37,7 @@ const HeroContainer = styled.div`
 const HtmlIcon = styled(motion.img)`
     position: absolute;
     top: ${gridUnitPx(30)};
-    right: -${gridUnitPx(15)};
+    right: -${gridUnitPx(10)};
 
     width: ${gridUnitPx(50)};
 
@@ -56,10 +56,10 @@ const HtmlIcon = styled(motion.img)`
 
 const MobileIcon = styled(motion.img)`
     position: absolute;
-    left: -${gridUnitPx(30)};
+    left: -${gridUnitPx(20)};
     bottom: ${gridUnitPx(30)};
     
-    width: ${gridUnitPx(80)};
+    width: ${gridUnitPx(60)};
 
     ${breakpointSmall(`
         width: ${gridUnitPx(90)};
