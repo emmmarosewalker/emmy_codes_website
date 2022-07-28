@@ -11,6 +11,7 @@
       "react/react-in-jsx-scope": "off",
       "react/jsx-uses-react": "off",
       "@typescript-eslint/comma-dangle": "off",
-      "jsx-a11y/media-has-caption": "off"
+      "jsx-a11y/media-has-caption": "off",
+      "no-console": "off"
     }
 } 
