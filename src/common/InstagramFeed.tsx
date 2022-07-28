@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { breakpointSmall } from '../design/browser';
+import { breakpointSmall, breakpointXLarge } from '../design/browser';
 import { gridUnitPx } from '../design/measurements';
+import Spacing from '../design/Spacing';
 import { H2 } from '../design/typography';
 
 type InstagramResponse = {
@@ -45,6 +46,14 @@ const MediaItem = styled.div`
       img, video {
         width: ${gridUnitPx(68)};
         height: ${gridUnitPx(68)};
+      }
+  `)}
+
+  ${breakpointXLarge(`
+    width: ${gridUnitPx(100)};
+      img, video {
+        width: ${gridUnitPx(80)};
+        height: ${gridUnitPx(80)};
       }
   `)}
 `;
@@ -96,7 +105,9 @@ export function InstagramFeed() {
 
   return (
     <div>
-      <H2 align="center" weight="semibold" size="x-large">Latest from instagram</H2>
+      <Spacing bottom="x-large">
+        <H2 align="center" weight="semibold" size="x-large">Latest from instagram</H2>
+      </Spacing>
       <MediaContainer>
         {data.slice(0, 6).map((item) => (
           <InstagramPost item={item} key={item.id} />

@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { breakpointXLarge } from '../design/browser';
+import { gridUnitPx } from '../design/measurements';
 
 import { borderShadow } from '../design/shadow';
 import { P } from '../design/typography';
@@ -39,6 +41,11 @@ const Container = styled.div`
         opacity: 0;
       }
   }
+
+  ${breakpointXLarge(`
+    width: ${gridUnitPx(100)};
+    height: ${gridUnitPx(75)};
+  `)}
 `;
 
 const StyledLink = styled.a`

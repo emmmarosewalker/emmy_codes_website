@@ -27,7 +27,7 @@ const HeroContainer = styled.div`
     `)}
 
     ${breakpointXLarge(`
-        margin: ${gridUnitPx(10)} auto;
+        margin: ${gridUnitPx(25)} auto ${gridUnitPx(25)} auto;
         display: flex;
         align-items: center;
         padding: ${gridUnitPx(15)} ${gridUnitPx(30)};
