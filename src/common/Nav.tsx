@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { white } from '../design/colors';
 import { gridUnitPx } from '../design/measurements';
@@ -37,7 +38,9 @@ export function Nav() {
   return (
     <Header>
       <NavBar>
-        <P weight="bold">Emmy Codes</P>
+        <Link to="/">
+          <P weight="bold">Emmy Codes</P>
+        </Link>
         <Menu>
           <MenuItem>
             Link 1
