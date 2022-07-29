@@ -43,8 +43,8 @@ const Container = styled.div`
   }
 
   ${breakpointXLarge(`
-    width: ${gridUnitPx(100)};
-    height: ${gridUnitPx(75)};
+    width: ${gridUnitPx(80)};
+    height: ${gridUnitPx(50)};
   `)}
 `;
 

@@ -10,7 +10,7 @@ const NavBar = styled.nav`
   align-items: center;
   justify-content: space-between;
   width: 90%;
-  max-width: ${gridUnitPx(300)};
+  max-width: ${gridUnitPx(275)};
 `;
 
 const Header = styled.header`

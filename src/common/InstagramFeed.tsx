@@ -18,7 +18,7 @@ const MediaContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: ${gridUnitPx(300)};
+  max-width: ${gridUnitPx(275)};
   margin: auto;
 
   ${breakpointSmall(`
@@ -50,10 +50,12 @@ const MediaItem = styled.div`
   `)}
 
   ${breakpointXLarge(`
-    width: ${gridUnitPx(100)};
+    width: ${gridUnitPx(90)};
+    height: ${gridUnitPx(90)};
+    border-radius: ${gridUnitPx(2)};
+    overflow: hidden;
       img, video {
-        width: ${gridUnitPx(80)};
-        height: ${gridUnitPx(80)};
+        width: 100%;
       }
   `)}
 `;

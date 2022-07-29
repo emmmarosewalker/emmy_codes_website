@@ -17,7 +17,7 @@ const HeroContainer = styled.div`
     height: ${gridUnitPx(150)};
     margin: ${gridUnitPx(10)};
     padding: ${gridUnitPx(3)} ${gridUnitPx(8)};
-    max-width: 1100px;
+    max-width: ${gridUnitPx(275)};
 
     border-radius: ${gridUnitPx(1)};
     background-color: ${primary};

@@ -1,7 +1,6 @@
 import { useAllPrismicDocumentsByType } from '@prismicio/react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Contact } from '../../common/Contact';
 import { InstagramFeed } from '../../common/InstagramFeed';
 import { Layout } from '../../common/Layout';
 import { Tutorials } from '../../common/Tutorials';
@@ -10,7 +9,7 @@ import { H2 } from '../../design/typography';
 import { Hero } from './Hero';
 
 const BlogContainer = styled.div`
-  max-width: ${gridUnitPx(300)};
+  max-width: ${gridUnitPx(275)};
   display: flex;
   margin: auto;
 `;
@@ -39,7 +38,6 @@ export function Home() {
           </Link>
         ))}
       </BlogContainer>
-      <Contact />
       <Tutorials />
       <InstagramFeed />
     </Layout>

@@ -23,6 +23,9 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 @font-face {
@@ -68,4 +71,15 @@ pre {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
   color: #2F2F2F;
+}
+
+a, a:visited {
+	color: #2F2F2F;
+	transition: all 0.2s ease-in-out;
+	text-decoration: underline transparent;
+}
+
+a:hover, a:focus {
+	color: #a11d68;
+	text-decoration: underline #a11d68;
 }

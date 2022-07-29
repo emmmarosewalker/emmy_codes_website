@@ -18,6 +18,10 @@ const Container = styled.div`
   ${breakpointLarge(`
     margin: ${gridUnitPx(20)} auto ${gridUnitPx(20)} auto;
   `)}
+
+  ${breakpointLarge(`
+    max-width: ${gridUnitPx(275)};
+  `)}
 `;
 
 const CardsContainer = styled.div`
@@ -31,6 +35,7 @@ const CardsContainer = styled.div`
   `)}
   ${breakpointXLarge(`
     gap: ${gridUnitPx(10)};
+    max-width: ${gridUnitPx(275)};
   `)}
 `;
 
