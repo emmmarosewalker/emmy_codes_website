@@ -10,12 +10,13 @@ import { breakpointSmall, breakpointXLarge } from '../../design/browser';
 import { primary } from '../../design/colors';
 import { gridUnitPx } from '../../design/measurements';
 import { DisplayOnlyOnXLarge } from '../../design/Responsive';
+import Spacing from '../../design/Spacing';
 import { H1, H2 } from '../../design/typography';
 
 const HeroContainer = styled.div`
     position: relative;
     height: ${gridUnitPx(150)};
-    margin: ${gridUnitPx(10)};
+    margin: 0 ${gridUnitPx(10)} ${gridUnitPx(10)} ${gridUnitPx(10)} ${gridUnitPx(10)};
     padding: ${gridUnitPx(3)} ${gridUnitPx(8)};
     max-width: ${gridUnitPx(275)};
 
@@ -27,7 +28,7 @@ const HeroContainer = styled.div`
     `)}
 
     ${breakpointXLarge(`
-        margin: ${gridUnitPx(15)} auto ${gridUnitPx(28)} auto;
+        margin: 0 auto ${gridUnitPx(28)} auto;
         display: flex;
         align-items: center;
         padding: ${gridUnitPx(15)} ${gridUnitPx(30)};
@@ -48,7 +49,7 @@ const HtmlIcon = styled(motion.img)`
     `)}
 
     ${breakpointXLarge(`
-        width: ${gridUnitPx(72)};
+        width: ${gridUnitPx(60)};
         right: -${gridUnitPx(20)};
         top: ${gridUnitPx(5)};
     `)}
@@ -62,7 +63,7 @@ const MobileIcon = styled(motion.img)`
     width: ${gridUnitPx(60)};
 
     ${breakpointSmall(`
-        width: ${gridUnitPx(85)};
+        width: ${gridUnitPx(70)};
         left: -${gridUnitPx(40)};
         bottom: ${gridUnitPx(5)};
     `)}
@@ -75,9 +76,8 @@ const MobileIcon = styled(motion.img)`
 
 const LaptopIcon = styled(motion.img)`
     position: absolute;
-    left: 40%;
-    bottom: ${gridUnitPx(20)};
-    width: ${gridUnitPx(86)};
+    left: 50%;
+    width: ${gridUnitPx(70)};
 `;
 
 const CloudIcon = styled(motion.img)`
@@ -164,8 +164,15 @@ export function Hero() {
         />
       </DisplayOnlyOnXLarge>
       <div>
-        <H1>Title</H1>
-        <H2>Subtitle text goes here</H2>
+        <H1>Welcome to EmmyCodes!</H1>
+        <Spacing left="small" top="small">
+          <div style={{ maxWidth: '60%' }}>
+            <H2>
+              I am a software developer aiming to inspire others to grow or
+              start their dev career
+            </H2>
+          </div>
+        </Spacing>
       </div>
     </HeroContainer>
   );

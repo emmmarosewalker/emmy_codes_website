@@ -39,11 +39,13 @@ export function Nav() {
     <Header>
       <NavBar>
         <Link to="/">
-          <P weight="bold">Emmy Codes</P>
+          <P weight="bold">EmmyCodes.</P>
         </Link>
         <Menu>
           <MenuItem>
-            Link 1
+            <Link to="/blog">
+              Blog
+            </Link>
           </MenuItem>
           <MenuItem>
             Link 2

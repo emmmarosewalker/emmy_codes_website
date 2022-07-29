@@ -1,14 +1,18 @@
 import { PrismicRichText, usePrismicDocumentByUID } from '@prismicio/react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
-import { Layout } from '../../common/Layout';
-import { secondary2, tertiary } from '../../design/colors';
 import { gridUnitPx } from '../../design/measurements';
 import { boxshadowSmall } from '../../design/shadow';
+import { P } from '../../design/typography';
 
 const ContentContainer = styled.div`
+  line-height: 1.5;
   img {
     max-width: 90%;
+    margin: ${gridUnitPx(3)} auto;
+  }
+  .block-img {
+    display: flex;
   }
   li {
     line-height: 1.5;
@@ -33,46 +37,47 @@ const ContentContainer = styled.div`
     ${boxshadowSmall};
     margin-top: ${gridUnitPx(4)};
     margin-bottom: ${gridUnitPx(4)};
+    font-size: 0.9rem;
+    overflow-x: scroll;
   }
 
   h1 {
     font-size: ${gridUnitPx(10)};
     font-weight: 600;
-    margin-bottom: ${gridUnitPx(3)};
+    margin-bottom: ${gridUnitPx(8)};
+    line-height: 1;
   }
 
   h2 {
     font-size: ${gridUnitPx(8)};
     font-weight: 500;
-    margin-bottom: ${gridUnitPx(2)};
+    margin: ${gridUnitPx(2)} 0;
   }
 
   h3 {
     font-size: ${gridUnitPx(6)};
     font-weight: 500;
-    margin-bottom: ${gridUnitPx(2)};
+    margin: ${gridUnitPx(2)} 0;
   }
 
   h4 {
     font-size: ${gridUnitPx(5)};
     font-weight: 800;
-    margin-bottom: ${gridUnitPx(2)};
+    margin: ${gridUnitPx(2)} 0;
   }
 
   h5 {
     font-size: ${gridUnitPx(5)};
     font-weight: 600;
     text-transform: uppercase;
-    margin-bottom: ${gridUnitPx(2)};
-    color ${tertiary};
+    margin: ${gridUnitPx(2)} 0;
   }
 
   h6 {
     font-size: ${gridUnitPx(4)};
     font-weight: 600;
     text-transform: uppercase;
-    margin-bottom: ${gridUnitPx(2)};
-    color ${secondary2};
+    margin: ${gridUnitPx(2)} 0;
   }
 
   a {
@@ -89,32 +94,33 @@ const ContentContainer = styled.div`
 
   p {
     margin-bottom: ${gridUnitPx(2)};
-    line-height: 1.2;
   }
 `;
 
 const Page = styled.div`
-  max-width: ${gridUnitPx(180)};
-  margin: ${gridUnitPx(10)} auto ${gridUnitPx(10)} auto;
+  max-width: ${gridUnitPx(275)};
+  margin: 0 auto ${gridUnitPx(10)} auto;
   border-radius: ${gridUnitPx(2)};
-  padding: ${gridUnitPx(6)};
+  padding: ${gridUnitPx(15)} ${gridUnitPx(20)};
   ${boxshadowSmall};
 `;
 
 export function BlogPost() {
   const params = useParams();
 
-  const [page] = usePrismicDocumentByUID('blog_post', params.slug || '');
+  const [page, { state }] = usePrismicDocumentByUID('blog_post', params.slug || '');
 
-  if (!page) return <p>page not found</p>;
+  if (state === 'loading') {
+    return <Page><P>Loading...</P></Page>;
+  }
+
+  if (!page) return <Page><P>Page not found</P></Page>;
 
   return (
-    <Layout>
-      <Page>
-        <ContentContainer>
-          <PrismicRichText field={page.data.blog_content} />
-        </ContentContainer>
-      </Page>
-    </Layout>
+    <Page>
+      <ContentContainer>
+        <PrismicRichText field={page.data.blog_content} />
+      </ContentContainer>
+    </Page>
   );
 }
