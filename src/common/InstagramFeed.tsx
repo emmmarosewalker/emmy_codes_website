@@ -107,7 +107,7 @@ export function InstagramFeed() {
 
   return (
     <div>
-      <Spacing bottom="x-large">
+      <Spacing bottom="x-large" top="xx-large">
         <H2 align="center" weight="semibold" size="x-large">Latest from instagram</H2>
       </Spacing>
       <MediaContainer>
