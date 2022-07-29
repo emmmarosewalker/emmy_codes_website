@@ -3,6 +3,7 @@ import {
 } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { Layout } from './common/Layout';
+import { About } from './pages/About/About';
 import { BlogPage } from './pages/Blog/AllBlogPosts';
 import { BlogPost } from './pages/Blog/BlogPost';
 import { Home } from './pages/Home/Home';
@@ -16,6 +17,7 @@ function App() {
           <Routes location={location}>
             <Route path="/" element={<Home />} />
             <Route path="/blog" element={<BlogPage />} />
+            <Route path="/about" element={<About />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
           </Routes>
         </CSSTransition>
