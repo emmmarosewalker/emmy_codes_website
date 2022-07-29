@@ -28,6 +28,7 @@ const StyledLink = styled(Link)`
     display: flex;
     flex-direction: column;
     max-width: 30%;
+    justify-content: space-between;
     ${borderShadow};
     border-radius: ${gridUnitPx(2)};
     padding: ${gridUnitPx(4)};
@@ -44,13 +45,15 @@ export function AllBlogPosts() {
       <BlogContainer>
         {state === 'loading' ? <p>loading...</p> : posts?.map((post) => (
           <StyledLink to={`/blog/${post.uid}`} key={post.id}>
-            <H2 size="regular">{post.data.title}</H2>
-            <Spacing bottom="medium" top="small">
-              <hr />
-            </Spacing>
             <BlogCard>
               <img src={post.data.hero_image.url} alt={post.data.hero_image.alt} />
             </BlogCard>
+            <div style={{ height: gridUnitPx(14) }}>
+              <Spacing bottom="medium" top="small">
+                <hr />
+              </Spacing>
+              <H2 size="regular">{post.data.title}</H2>
+            </div>
           </StyledLink>
         ))}
       </BlogContainer>
