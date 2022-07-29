@@ -26,7 +26,7 @@ jobs:
           
       - name: Update files in S3
         run: |
-           aws s3 sync ./build s3://emmy-codes-client --delete
+           aws s3 sync ./dist s3://emmy-codes-client --delete
            
       - name: Invalidate CloudFront cache
         uses: chetan/invalidate-cloudfront-action@v2
