@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { gridUnitPx } from '../../design/measurements';
 import { boxshadowSmall } from '../../design/shadow';
-import { P } from '../../design/typography';
+import { H1, P } from '../../design/typography';
 
 const ContentContainer = styled.div`
   line-height: 1.5;
@@ -116,9 +116,19 @@ export function BlogPost() {
 
   if (!page) return <Page><P>Page not found</P></Page>;
 
+  console.log(page);
   return (
     <Page>
       <ContentContainer>
+        <H1>{page.data.title}</H1>
+        <P size="small">
+          Published:
+          {' '}
+          {page.data.date}
+          {' '}
+          by Emma W
+        </P>
+        <img src={page.data.hero_image.url} alt={page.data.hero_image.alt} />
         <PrismicRichText field={page.data.blog_content} />
       </ContentContainer>
     </Page>
