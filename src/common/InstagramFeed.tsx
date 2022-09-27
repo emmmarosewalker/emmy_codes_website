@@ -111,7 +111,7 @@ export function InstagramFeed() {
         <H2 align="center" weight="semibold" size="x-large">Latest from instagram</H2>
       </Spacing>
       <MediaContainer>
-        {data.slice(0, 6).map((item) => (
+        {data && data.slice(0, 6).map((item) => (
           <InstagramPost item={item} key={item.id} />
         ))}
       </MediaContainer>
