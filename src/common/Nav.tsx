@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { white } from '../design/colors';
 import { gridUnitPx } from '../design/measurements';
 import { boxshadowSmall } from '../design/shadow';
-import Spacing from '../design/Spacing';
 import { P } from '../design/typography';
 
 const NavBar = styled.nav`
@@ -47,16 +46,6 @@ export function Nav() {
             <Link to="/blog">
               Blog
             </Link>
-          </MenuItem>
-          <Spacing right="large" left="large">
-            <MenuItem>
-              <Link to="/about">
-                About me
-              </Link>
-            </MenuItem>
-          </Spacing>
-          <MenuItem>
-            Link 3
           </MenuItem>
         </Menu>
       </NavBar>
